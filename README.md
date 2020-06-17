@@ -18,16 +18,16 @@ Create a new python env
 
 Install the required pip packages for the project with:
 
-    $ pip3 install -r requirements.txt
-
+    pip3 install -r requirements.txt
+    python -m spacy download en_core_web_sm
 
 ## Run Localstack
 
 The easy way is to run LocalStack with docker-compose
 
 Run the LocalStack container in the background with:
-  
- \$ docker-compose up -d
+
+\$ docker-compose up -d
 
 Follow the logs with:
 
@@ -39,15 +39,4 @@ Till you see:
 ...
 Waiting for all LocalStack services to be ready
 Ready.
-```
-
-## Run tests
-
-A simple test that creates, invokes, and then tears down a simple Lambda is provided.
-
-To run the test, use the following commands within the root of the project:
-
-```
-$ cd lambda/basic_lambda
-$ pytest -s .
 ```

@@ -9,8 +9,12 @@ from spacy.lang.en import English
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
-from joblib import dump
+from joblib import dump, load
+import pickle
 from constants import model_filename
+
+# Used to create a new model from our base tweets data, tweets.csv
+# @todo add a conditional to prevent accidentally overwriting model
 
 df_tweet = pd.read_csv("data/tweets.csv", sep=",")
 
@@ -89,8 +93,15 @@ print(
     metrics.recall_score(y_test, predicted, average="micro"),
 )
 
-example = ["SLB files for bankruptcy, expect stock fall", "Microsoft: Its free money"]
+example = [
+    "SLB files for bankruptcy, expect stock fall",
+    "Microsoft: Its free money",
+]
 print(pipe.predict(example))
 
-# saving model
-dump(pipe, model_filename)
+# saving the model
+pickle.dump(pipe, open(model_filename, "wb"))
+
+model = pickle.load(open(model_filename, "rb"))
+
+print(model.predict(example))
