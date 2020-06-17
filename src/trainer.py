@@ -78,13 +78,19 @@ predicted = pipe.predict(X_test)
 
 # Model Accuracy
 print("Logistic Regression Accuracy:", metrics.accuracy_score(y_test, predicted))
-print("Logistic Regression Precision:", metrics.precision_score(y_test, predicted))
-print("Logistic Regression Recall:", metrics.recall_score(y_test, predicted))
+print(
+    "Logistic Regression Precision:",
+    metrics.precision_score(y_test, predicted, average="micro"),
+)
+print(
+    "Logistic Regression Recall:",
+    metrics.recall_score(y_test, predicted, average="micro"),
+)
 
 # for (sample, pred) in zip(X_test, predicted):
 # print(sample, "Prediction => ", pred)
 
-# example = ["1", "30-Jul-18", "Heather Gray Fabric", "Hate it! Doesn't work"]
-# print(pipe.predict(example))
+example = ["SLB files for bankruptcy, expect stock fall", "Microsoft: it's free money", "Nah"]
+print(pipe.predict(example))
 
 # @todo save model
