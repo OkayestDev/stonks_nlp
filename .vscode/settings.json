@@ -1,0 +1,8 @@
+{
+  "python.testing.pytestArgs": ["tests"],
+  "python.testing.unittestEnabled": true,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.pytestEnabled": false,
+  "python.testing.pytestPath": "./.env/Lib/pytest",
+  "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "*test*.py"]
+}
