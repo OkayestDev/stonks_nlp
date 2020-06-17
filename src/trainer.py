@@ -9,6 +9,8 @@ from spacy.lang.en import English
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
+from joblib import dump
+from constants import model_filename
 
 df_tweet = pd.read_csv("data/tweets.csv", sep=",")
 
@@ -87,10 +89,8 @@ print(
     metrics.recall_score(y_test, predicted, average="micro"),
 )
 
-# for (sample, pred) in zip(X_test, predicted):
-# print(sample, "Prediction => ", pred)
-
-example = ["SLB files for bankruptcy, expect stock fall", "Microsoft: it's free money", "Nah"]
+example = ["SLB files for bankruptcy, expect stock fall", "Microsoft: Its free money"]
 print(pipe.predict(example))
 
-# @todo save model
+# saving model
+dump(pipe, model_filename)
