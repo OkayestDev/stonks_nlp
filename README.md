@@ -1,5 +1,3 @@
-# LocalStack and pytest
-
 ## Prerequisites
 
 - Docker Compose
