@@ -1,42 +1,27 @@
 # LocalStack and pytest
 
-### Windows
-
-    You'll need "Microsoft Visual C++ 14.0" to compile dependencies:
-    https://visualstudio.microsoft.com/downloads/
-    Be sure to select build tools before installing
-
 ## Prerequisites
 
-- Python 3+
 - Docker Compose
 
-Create a new python env
+We're using docker for local dev as python development on windows is poopy doo doo
 
-    python -m venv .env
-    .\.env\Scripts\activate
+    docker-compose up -d
 
-Install the required pip packages for the project with:
+Shell into python docker
 
-    pip3 install -r requirements.txt
-    python -m spacy download en_core_web_sm
+    docker exec -it stonks_nlp /bin/bash
 
-## Run Localstack
-
-The easy way is to run LocalStack with docker-compose
-
-Run the LocalStack container in the background with:
-
-\$ docker-compose up -d
+## Localstack
 
 Follow the logs with:
 
     $ docker logs -f localstack
 
-Till you see:
+Until you see:
 
-```
-...
-Waiting for all LocalStack services to be ready
-Ready.
-```
+    ```
+    ...
+    Waiting for all LocalStack services to be ready
+    Ready.
+    ```

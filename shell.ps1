@@ -1,0 +1,1 @@
+docker exec -it stonks_nlp /bin/bash
