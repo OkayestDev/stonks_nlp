@@ -1,5 +1,5 @@
 from unittest import TestCase
-import src.nlp as nlp
+import src.stonks_nlp as nlp
 
 
 class Test(TestCase):
@@ -14,7 +14,14 @@ class Test(TestCase):
         $QQQ $IWM $XLF $JPM $WFC $FB
     """
 
-    def test_tweet_one_returns_no_by_for_BP_stock(self):
+    def test_tweet_one_returns_0(self):
         result = nlp.get_sentiment_of_tweet(self.tweet_one)
-        self.assertEqual(result["is_buy"], False)
-        self.assertEqual(result["stocks"], ["BP"])
+        self.assertEqual(0, result)
+
+    def test_tweet_two_returns_1(self):
+        result = nlp.get_sentiment_of_tweet(self.tweet_two)
+        self.assertEqual(1, result)
+
+    def test_tweet_three_returns_2(self):
+        result = nlp.get_sentiment_of_tweet(self.tweet_three)
+        self.assertEqual(2, result)

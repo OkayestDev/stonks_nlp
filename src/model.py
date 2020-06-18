@@ -66,7 +66,3 @@ class Model:
         def clean_text(self, text):
             return text.strip().lower()
 
-    # Wrapper for predicting tweet sentiments
-    def predict():
-        return True
-
