@@ -15,7 +15,7 @@ Shell into python docker
 ## Generating Model
 
 trainer.py is a script to generate an sklearn model under stonks_model (constants.model_filename)
-**@todo:**We'll start committing this file
+**todo:** We'll start committing this file
 
     python src/trainer.py
 
