@@ -12,19 +12,20 @@ Shell into python docker
 
     docker exec -it stonks_nlp /bin/bash
 
-## Localstack
+## Generating Model
 
-Follow the logs with:
+trainer.py is a script to generate an sklearn model under stonks_model (constants.model_filename)
+**@todo:**We'll start committing this file
 
-    $ docker logs -f localstack
+    python src/trainer.py
 
-Until you see:
+## Stonks cli
 
-    ```
-    ...
-    Waiting for all LocalStack services to be ready
-    Ready.
-    ```
+CLI for getting sentiment of tweet
+
+    python -m src.stonks_cli "some real tweet"
+
+Will print out an integer sentiment
 
 ## Testing
 
