@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
+# Self contained sklearn model. This class is what is saved in stonks_model
 class Model:
     def __init__(self, X, ylabels):
         self.classifier = LogisticRegression()
@@ -64,4 +65,8 @@ class Model:
 
         def clean_text(self, text):
             return text.strip().lower()
+
+    # Wrapper for predicting tweet sentiments
+    def predict():
+        return True
 

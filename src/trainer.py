@@ -1,11 +1,12 @@
 import pandas as pd
-import pickle
+import os
 from sklearn import metrics
-from model import Model
-from joblib import dump, load
-from model_loader import save_model
+from src.model import Model
+from joblib import load, dump
+from src.constants import model_filename
 
-df_tweet = pd.read_csv("data/tweets.csv", sep=",")
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+df_tweet = pd.read_csv(ROOT_DIR + "/data/tweets.csv", sep=",")
 
 X = df_tweet["tweet"]  # the features we want to analyze
 ylabels = df_tweet["sentiment"]  # the labels, or answers, we want to test against
@@ -37,4 +38,6 @@ example = [
 print(model.pipe.predict(example))
 
 # saving the model
-save_model(model)
+file = open(ROOT_DIR + "/" + model_filename, "wb")
+dump(model, file)
+file.close()

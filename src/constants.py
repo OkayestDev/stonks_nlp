@@ -1,1 +1,1 @@
-model_filename = "stonks.model"
+model_filename = "stonks_model"

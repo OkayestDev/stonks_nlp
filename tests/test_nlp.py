@@ -1,6 +1,7 @@
 from unittest import TestCase
 import src.nlp as nlp
 
+
 class Test(TestCase):
     tweet_one = "BP Faces $17.5B Q2 Hit, Expects Lower Oil Price $BP"
     tweet_two = "25 Stocks Moving in Monday's Pre-Market Session $ISEE $VTVT $BBI $FLDM $WUBA $HTZ $PYX $CVGI $PCG $BTU"

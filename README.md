@@ -25,3 +25,9 @@ Until you see:
     Waiting for all LocalStack services to be ready
     Ready.
     ```
+
+## Testing
+
+We're using python's unittest for tests. Shell in (you can use shell.ps1) and run:
+
+    python -m unittest {testfile}
