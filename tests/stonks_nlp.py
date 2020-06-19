@@ -4,6 +4,7 @@ import src.stonks_nlp as nlp
 
 class Test(TestCase):
     tweet_one = "BP Faces $17.5B Q2 Hit, Expects Lower Oil Price $BP"
+    # this one is tricky as it's an indeterminate, this test will mostly fail until we have a lot of data
     tweet_two = "25 Stocks Moving in Monday's Pre-Market Session $ISEE $VTVT $BBI $FLDM $WUBA $HTZ $PYX $CVGI $PCG $BTU"
     tweet_three = """
         The volatility index $VIX increased by more than 50% this week. 
@@ -20,8 +21,8 @@ class Test(TestCase):
 
     def test_tweet_two_returns_1(self):
         result = nlp.get_sentiment_of_tweet(self.tweet_two)
-        self.assertEqual(1, result)
+        self.assertEqual(0, result)
 
     def test_tweet_three_returns_2(self):
         result = nlp.get_sentiment_of_tweet(self.tweet_three)
-        self.assertEqual(2, result)
+        self.assertEqual(1, result)

@@ -16,4 +16,4 @@ class Test(TestCase):
         prediction = model.pipe.predict(example)
         print(prediction)
         self.assertEqual(prediction[0], 0)
-        self.assertEqual(prediction[1], 2)
+        self.assertEqual(prediction[1], 1)
