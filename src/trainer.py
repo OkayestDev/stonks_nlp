@@ -31,12 +31,6 @@ print(
     metrics.recall_score(model.y_test, predicted, average="micro"),
 )
 
-example = [
-    "SLB files for bankruptcy, expect stock fall",
-    "Microsoft: Its free money",
-]
-print(model.pipe.predict(example))
-
 # saving the model
 file = open(ROOT_DIR + "/" + model_filename, "wb")
 dump(model, file)

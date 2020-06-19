@@ -43,12 +43,14 @@ class Model:
             word.lemma_.lower().strip() if word.lemma_ != "-PRON-" else word.lower_
             for word in my_tokens
         ]
+
         # Removing stop words
         my_tokens = [
             word
             for word in my_tokens
             if word not in self.stop_words and word not in self.punctuations
         ]
+
         # return preprocessed list of tokens
         return my_tokens
 
@@ -65,4 +67,10 @@ class Model:
 
         def clean_text(self, text):
             return text.strip().lower()
+
+    # Wrapper for pipe.predict
+    def predict(self, tweet):
+        tweet = [tweet]
+        prediction = self.pipe.predict(tweet)[0]
+        return prediction
 
