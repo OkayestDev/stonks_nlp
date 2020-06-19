@@ -6,7 +6,7 @@ We're using docker for local dev as python development on windows is poopy doo d
 
     docker-compose up -d
 
-Shell into python docker
+Shell into python docker (can also use shell.ps1)
 
     docker exec -it stonks_nlp /bin/bash
 
