@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="stonks_nlp",  # Replace with your own username
+    name="stonks_nlp",
     version="0.0.1",
     author="Example Author",
     author_email="author@example.com",
